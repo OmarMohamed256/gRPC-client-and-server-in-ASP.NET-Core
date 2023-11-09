@@ -11,11 +11,13 @@ namespace GrpcService1.Services
             _logger = logger;
         }
 
-        public override Task<HelloReply> SayHello(HelloRequest request, ServerCallContext context)
+        public override Task<GreetReply> Greet(GreetRequest request, ServerCallContext context)
         {
-            return Task.FromResult(new HelloReply
+            string result = String.Format("hello {0} {1}", request.Greeting.FirstName,
+                request.Greeting.LastName);
+            return Task.FromResult(new GreetReply
             {
-                Message = "Hello " + request.Name
+                Result = result,
             });
         }
     }
