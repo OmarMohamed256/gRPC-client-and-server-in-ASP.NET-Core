@@ -20,5 +20,17 @@ namespace GrpcService1.Services
                 Result = result,
             });
         }
+        public override async Task GreetManyTimes(GreetManyTimesRequest request, IServerStreamWriter<GreetManyTimesReply> responseStream, ServerCallContext context)
+        {
+            Console.WriteLine("the server recived the request : ");
+            Console.WriteLine(request.ToString());
+
+            string result = String.Format("hello {0} {1}", request.Greeting.FirstName,
+                request.Greeting.LastName);
+            foreach(int i in Enumerable.Range(1, 10))
+            {
+                await responseStream.WriteAsync(new GreetManyTimesReply() { Result = result });
+            }
+        }
     }
 }

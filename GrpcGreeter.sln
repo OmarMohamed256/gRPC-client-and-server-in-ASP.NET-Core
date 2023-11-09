@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34221.43
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcService1", "GrpcService1\GrpcService1.csproj", "{5DAA89A1-5F91-4FBD-A16F-69757CD47DC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrpcService1", "GrpcService1\GrpcService1.csproj", "{5DAA89A1-5F91-4FBD-A16F-69757CD47DC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GrpcGreeterClient", "GrpcGreeterClient\GrpcGreeterClient.csproj", "{B13CB144-1815-4B67-89F2-945341027E9A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GrpcGreeterClient", "GrpcGreeterClient\GrpcGreeterClient.csproj", "{B13CB144-1815-4B67-89F2-945341027E9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrimeServiceClient", "PrimeService\PrimeServiceClient.csproj", "{D6F10D06-700B-4634-B06D-9AFE38F33251}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{B13CB144-1815-4B67-89F2-945341027E9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B13CB144-1815-4B67-89F2-945341027E9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B13CB144-1815-4B67-89F2-945341027E9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6F10D06-700B-4634-B06D-9AFE38F33251}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6F10D06-700B-4634-B06D-9AFE38F33251}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6F10D06-700B-4634-B06D-9AFE38F33251}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6F10D06-700B-4634-B06D-9AFE38F33251}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

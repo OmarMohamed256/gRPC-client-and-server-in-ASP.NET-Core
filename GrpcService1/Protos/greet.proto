@@ -8,11 +8,17 @@ package greet;
 service Greeter {
   // Sends a greeting
   rpc Greet (GreetRequest) returns (GreetReply);
+  // server streaming
+  rpc GreetManyTimes(GreetManyTimesRequest) returns (stream GreetManyTimesReply);
 }
 
 // The request message containing the user's name.
 message GreetRequest {
   Greeting greeting = 1;
+}
+// The response message containing the greetings.
+message GreetReply {
+  string result = 1;
 }
 
 message Greeting {
@@ -20,7 +26,10 @@ message Greeting {
 	string last_name = 2;
 }
 
-// The response message containing the greetings.
-message GreetReply {
+message GreetManyTimesRequest {
+  Greeting greeting = 1;
+}
+
+message GreetManyTimesReply {
   string result = 1;
 }
