@@ -10,6 +10,8 @@ service Greeter {
   rpc Greet (GreetRequest) returns (GreetReply);
   // server streaming
   rpc GreetManyTimes(GreetManyTimesRequest) returns (stream GreetManyTimesReply);
+  // client streaming
+  rpc LongGreet (stream LongGreetRequest) returns (LongGreetReply);
 }
 
 // The request message containing the user's name.
@@ -31,5 +33,14 @@ message GreetManyTimesRequest {
 }
 
 message GreetManyTimesReply {
+  string result = 1;
+}
+
+
+message LongGreetRequest {
+  Greeting greeting = 1;
+}
+
+message LongGreetReply {
   string result = 1;
 }
