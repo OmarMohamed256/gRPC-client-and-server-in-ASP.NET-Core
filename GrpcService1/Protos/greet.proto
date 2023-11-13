@@ -12,6 +12,8 @@ service Greeter {
   rpc GreetManyTimes(GreetManyTimesRequest) returns (stream GreetManyTimesReply);
   // client streaming
   rpc LongGreet (stream LongGreetRequest) returns (LongGreetReply);
+  // Bidi streaming
+  rpc GreetEveryone (stream GreetEveryoneRequest) returns (stream GreetEveryoneReply);
 }
 
 // The request message containing the user's name.
@@ -42,5 +44,13 @@ message LongGreetRequest {
 }
 
 message LongGreetReply {
+  string result = 1;
+}
+
+message GreetEveryoneRequest {
+  Greeting greeting = 1;
+}
+
+message GreetEveryoneReply {
   string result = 1;
 }

@@ -45,5 +45,17 @@ namespace GrpcService1.Services
             }
             return new LongGreetReply { Result = result };
         }
+
+        public override async Task GreetEveryone(IAsyncStreamReader<GreetEveryoneRequest> requestStream,
+            IServerStreamWriter<GreetEveryoneReply> responseStream, ServerCallContext context)
+        {
+            while (await requestStream.MoveNext())
+            {
+                var result = String.Format("Hello {0} {1}",
+                     requestStream.Current.Greeting.FirstName, requestStream.Current.Greeting.LastName);
+                Console.WriteLine("Recived : " + result);
+                await responseStream.WriteAsync(new GreetEveryoneReply() { Result = result });
+            }
+        }
     }
 }
